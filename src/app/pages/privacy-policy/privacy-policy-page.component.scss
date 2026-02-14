@@ -1,0 +1,25 @@
+.policy-wrapper {
+  display: grid;
+  gap: 1rem;
+}
+
+.policy-header h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--text-primary);
+}
+
+.policy-header p {
+  margin: 0.2rem 0 0;
+  color: var(--text-secondary);
+}
+
+.policy-frame {
+  width: 100%;
+  min-height: calc(100vh - 220px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+}

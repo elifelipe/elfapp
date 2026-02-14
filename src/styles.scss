@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --text-primary: #07243a;
+  --text-secondary: #345168;
+  --border-color: #cfe0ee;
+  --card-shadow: 0 8px 28px rgba(5, 27, 43, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf4f9 45%, #f7fbff 100%);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background-color: #0d577f !important;
+}
+
+.mat-mdc-raised-button.mat-primary:hover {
+  background-color: #0b4d71 !important;
+}
+
+.mat-mdc-outlined-button.mat-accent {
+  border-color: #0d577f !important;
+  color: #0d577f !important;
+}

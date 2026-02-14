@@ -1,0 +1,45 @@
+.contact-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  color: var(--text-primary);
+  margin-bottom: 0.7rem;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1.6rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: #ffffffbf;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: var(--card-shadow);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  align-self: flex-end;
+  min-height: 44px;
+  padding: 0 1.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  button {
+    width: 100%;
+  }
+}

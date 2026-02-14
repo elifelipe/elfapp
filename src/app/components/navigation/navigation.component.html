@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span matListItemTitle>Inicio</span>
+      </a>
+      <a mat-list-item routerLink="/services" routerLinkActive="active">
+        <mat-icon matListItemIcon>developer_mode</mat-icon>
+        <span matListItemTitle>Servicos</span>
+      </a>
+      <a mat-list-item routerLink="/about" routerLinkActive="active">
+        <mat-icon matListItemIcon>info</mat-icon>
+        <span matListItemTitle>Sobre Nos</span>
+      </a>
+      <a mat-list-item routerLink="/contact" routerLinkActive="active">
+        <mat-icon matListItemIcon>contact_mail</mat-icon>
+        <span matListItemTitle>Contato</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Abrir ou fechar menu"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Icone do menu lateral">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
+      </button>
+      <span class="brand">ELFAPP</span>
+      <span class="brand-subtitle">Solucoes digitais de alto impacto</span>
+      <span class="spacer"></span>
+      @if (!(isHandset$ | async)) {
+        <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        <a mat-button routerLink="/services" routerLinkActive="active-link">Servicos</a>
+        <a mat-button routerLink="/about" routerLinkActive="active-link">Sobre</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link">Contato</a>
+      }
+    </mat-toolbar>
+    <div class="content-container">
+        <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,35 @@
+<div class="contact-container">
+  <h1>Entre em contato</h1>
+  <p>Tem um projeto em mente ou precisa de suporte? Envie sua mensagem.</p>
+  
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" placeholder="Seu nome">
+      @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+        <mat-error>Nome e obrigatorio</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="seuemail@empresa.com">
+      @if (contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched) {
+        <mat-error>Digite um email valido</mat-error>
+      }
+      @if (contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched) {
+        <mat-error>Email e obrigatorio</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mensagem</mat-label>
+      <textarea matInput formControlName="message" rows="5" placeholder="Conte um pouco sobre seu projeto..."></textarea>
+      @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+        <mat-error>Mensagem e obrigatoria</mat-error>
+      }
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Enviar mensagem</button>
+  </form>
+</div>
