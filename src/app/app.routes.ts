@@ -55,5 +55,14 @@ export const routes: Routes = [
       frameTitle: 'Politica de Privacidade do aplicativo Meu Orçamento'
     }
   },
+  {
+    path: 'pages/politica-privacidade-eppt',
+    component: PrivacyPolicyPageComponent,
+    data: {
+      appName: 'EPPT',
+      policyFile: 'politica-privacidade-eppt.html',
+      frameTitle: 'Politica de Privacidade do aplicativo EPPT'
+    }
+  },
   { path: '**', redirectTo: '' }
 ];
