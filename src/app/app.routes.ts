@@ -38,6 +38,15 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'pages/termos-de-uso-minha-receita',
+    component: PrivacyPolicyPageComponent,
+    data: {
+      appName: 'Minha Receita',
+      policyFile: 'termos-de-uso-minha-receita.html',
+      frameTitle: 'Termos de Serviço do aplicativo Minha Receita'
+    }
+  },
+  {
     path: 'pages/politica-privacidade-prumo',
     component: PrivacyPolicyPageComponent,
     data: {
