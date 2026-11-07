@@ -73,5 +73,18 @@ export const routes: Routes = [
       frameTitle: 'Politica de Privacidade do aplicativo EPPT'
     }
   },
+  {
+    path: 'pages/politica-privacidade-dinee-garcom',
+    component: PrivacyPolicyPageComponent,
+    data: {
+      appName: 'Dinee garcom',
+      policyFile: 'politica-privacidade-dinee-garcom.html',
+      frameTitle: 'Politica de Privacidade do aplicativo Dinee garcom'
+    }
+  },
+  {
+    path: 'pages/privacy-policy-dinee-garcom',
+    redirectTo: 'pages/politica-privacidade-dinee-garcom'
+  },
   { path: '**', redirectTo: '' }
 ];
